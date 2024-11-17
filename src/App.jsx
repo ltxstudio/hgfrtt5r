@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import MarkdownInput from './components/MarkdownInput';
+import TextOutput from './components/TextOutput';
+import { FiGithub } from 'react-icons/fi';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [markdown, setMarkdown] = useState('');
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
+      <header className="w-full max-w-4xl flex justify-between items-center py-4">
+        <h1 className="text-3xl font-bold text-gray-800">Markdown to Text Converter</h1>
+        <a
+          href="https://github.com/your-repo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-black"
+        >
+          <FiGithub size={24} />
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      </header>
+      <MarkdownInput markdown={markdown} setMarkdown={setMarkdown} />
+      <TextOutput markdown={markdown} />
+      <footer className="mt-auto text-gray-500">
+        <p>Made with React, Tailwind CSS, and Framer Motion.</p>
+      </footer>
+    </div>
+  );
+};
 
-export default App
+export default App;
