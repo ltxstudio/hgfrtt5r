@@ -4,13 +4,13 @@ import { getAnalytics } from 'firebase/analytics';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
-  measurementId: "YOUR_MEASUREMENT_ID", // Ensure this is included for Analytics
+  apiKey: "AIzaSyBXFz1hcvq7FvZBU3KxIpDVH1Z6YKwUo98",
+  authDomain: "md-to-txt.firebaseapp.com",
+  projectId: "md-to-txt",
+  storageBucket: "md-to-txt.firebasestorage.app",
+  messagingSenderId: "11304797402",
+  appId: "1:11304797402:web:7e5af0ac0f1cb95d3e91e3",
+  measurementId: "G-YH78GKHW2V"
 };
 
 // Initialize Firebase
