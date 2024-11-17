@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
+import { analytics } from './firebase'; // Import analytics
+import { logEvent } from 'firebase/analytics'; // Import logEvent function
 import MarkdownInput from './components/MarkdownInput';
 import TextOutput from './components/TextOutput';
 import About from './components/About';
@@ -9,6 +11,14 @@ import { FiGithub } from 'react-icons/fi';
 
 const App = () => {
   const [markdown, setMarkdown] = useState('');
+
+  useEffect(() => {
+    // Log a page view event when the component mounts
+    logEvent(analytics, 'page_view', { page_title: 'Markdown to Text Converter' });
+
+    // Log custom events based on user actions (example)
+    logEvent(analytics, 'app_load', { description: 'App Loaded Successfully' });
+  }, []);
 
   return (
     <HelmetProvider>
