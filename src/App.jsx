@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import MarkdownInput from './components/MarkdownInput';
 import TextOutput from './components/TextOutput';
+import About from './components/About';
+import Features from './components/Features';
+import FAQ from './components/FAQ';
 import { FiGithub } from 'react-icons/fi';
 
 const App = () => {
@@ -21,6 +24,9 @@ const App = () => {
       </header>
       <MarkdownInput markdown={markdown} setMarkdown={setMarkdown} />
       <TextOutput markdown={markdown} />
+      <About />
+      <Features />
+      <FAQ />
       <footer className="mt-auto text-gray-500">
         <p>Made with React, Tailwind CSS, and Framer Motion.</p>
       </footer>
